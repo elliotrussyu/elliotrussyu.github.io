@@ -6,6 +6,7 @@
 
 ----  
 <center>
+<br></br>
 
 ## Education  
 
