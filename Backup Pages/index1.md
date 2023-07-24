@@ -29,7 +29,7 @@ Contact: [hanshu_yu@outlook.com](hanshu_yu@outlook.com)
 ----
 
 
-## <center> Self intro </center>
+## <center> Brief Self intro </center>
 
 <center> 
 
