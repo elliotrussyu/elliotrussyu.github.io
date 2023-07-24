@@ -1,6 +1,6 @@
 <br/><br/>
 <br/><br/>
-<br/><br/>
+
 # <center> Hanshu Yu  </center>   
 <center> 
 <br/><br/>
@@ -13,22 +13,18 @@
 
 ----
 <center> 
-
 <br/><br/>
-
-
-
 
 Upcoming PhD student in the [Computational Network Science Lab](https://www.computationalnetworkscience.org/) @Leiden University.   
 
 
-
 Contact: [hanshu_yu@outlook.com](hanshu_yu@outlook.com) 
+<br/><br/>
 <br/><br/>
 
 ----
 
-<br/><br/>
+
 ## <center> Self intro </center>
 
 <center> 
