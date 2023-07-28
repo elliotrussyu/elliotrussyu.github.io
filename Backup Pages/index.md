@@ -5,10 +5,10 @@
 <center> 
 <br/><br/>
 
-[CV](portfolio/cv.html) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[Publications](publications/pubs.html) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[Open-source tools](tools/tools.html) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[Blogs](blogs/blogs.html)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[CV](portfolio/cv.html)  &emsp;&emsp;&emsp;
+[Publications](publications/pubs.html) &emsp;&emsp;&emsp;
+[Open-source tools](tools/tools.html) &emsp;&emsp;&emsp;
+[Blogs](blogs/blogs.html) &emsp;&emsp;&emsp;
 [Other Interesting Contents](others/other.html)
 
 ----
@@ -18,7 +18,7 @@
 Upcoming PhD student in the [Computational Network Science Lab](https://www.computationalnetworkscience.org/) @Leiden University.   
 
 
-Contact: [hanshu_yu@outlook.com](hanshu_yu@outlook.com) 
+Contact: hanshu\_yu\@outlook.com
 <br/><br/>
 <br/><br/>
 
