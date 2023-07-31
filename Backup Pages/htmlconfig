@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-
+<head>
+  <title></title>
+  <meta name="" content="" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!-- <link rel="canonical" href="https://hanshuyu.com"> -->
+</head> 
 <style>
     body {
+      background-color:rgb(233, 218, 82);
       font-size: 20px;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
     /* p {
       padding-left: 75px;
     } */
-    </style>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title></title></head><body style="background-color:rgb(233, 218, 82);"></body>
-
+</style>
