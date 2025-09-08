@@ -1,0 +1,288 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{physics} % provides \vb{} for vectors, \dv{} etc.
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\sisetup{per-mode=symbol}
+
+% Boxes for clarity
+\tcbset{sharp corners, colframe=black!30, boxsep=1mm, left=1mm,right=1mm,top=1mm,bottom=1mm}
+\newtcolorbox{eqbox}{colback=blue!5!white, colframe=blue!50!black, title=Key Equation}
+\newtcolorbox{tipbox}{colback=yellow!10!white, colframe=yellow!50!black, title=Teaching Tip}
+\newtcolorbox{clarifybox}{colback=green!5!white, colframe=green!50!black, title=Clarification}
+
+\title{Fundamental Mathematics and Physics Concepts for Drivetrain Analysis}
+\author{Hanshu Yu\\HZ University of Applied Sciences}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+\section{Newton's Laws of Motion}
+
+\subsection*{First Law (Inertia)}
+The Newton's first law of motion describes the natural tendency of objects to maintain their state of motion. Without external forces, moving objects continue moving at constant velocity, and stationary objects remain at rest. 
+\begin{eqbox}
+\[
+\sum \vb{F} = 0 \;\;\Longleftrightarrow\;\; \dv{\vb{v}}{t} = 0
+\]
+\end{eqbox}
+
+
+\subsection*{Second Law (Acceleration)}
+The Newton's second law of motion quantifies how forces cause acceleration. It establishes the direct relationship between applied force, object mass, and resulting acceleration. 
+
+\begin{eqbox}
+\[
+\vb{F} = m \vb{a} = m \dv{\vb{v}}{t} = \dv{(m\vb{v})}{t}
+\]
+\end{eqbox}
+For variable mass systems:
+\[
+\vb{F} = m \dv{\vb{v}}{t} + \vb{v} \dv{m}{t}.
+\]
+
+\subsection*{Third Law (Action--Reaction)}
+The Newton's third law of motion states that forces always occur in pairs. When object A exerts a force on object B, object B simultaneously exerts an equal and opposite force on object A.
+
+\begin{eqbox}
+\[
+\vb{F}_{12} = - \vb{F}_{21}
+\]
+\end{eqbox}
+
+
+\section{Kinematic Quantities}
+
+\subsection*{Displacement}
+Displacement measures the change in position of an object from one point to another. Unlike distance, displacement is a vector quantity that considers both magnitude and direction. In rotational systems, angular displacement measures the change in rotational position.
+
+\[
+\vb{s} = \vb{r}(t_2) - \vb{r}(t_1), \qquad 
+\theta = \theta(t_2) - \theta(t_1)
+\]
+
+\subsection*{Velocity}
+Velocity describes how quickly displacement changes with time. It indicates both the speed and direction of motion. Angular velocity describes how quickly an object rotates. The relationship $v = r\omega$ connects linear and angular velocities for points on rotating objects.
+
+\[
+\vb{v} = \dv{\vb{s}}{t}, \qquad \omega = \dv{\theta}{t}, \qquad v = r\omega
+\]
+
+\subsection*{Acceleration}
+Acceleration measures how quickly velocity changes with time. It occurs when an object speeds up, slows down, or changes direction. In circular motion, acceleration has two components: tangential acceleration (changing speed) and centripetal acceleration (changing direction).
+
+\[
+\vb{a} = \dv{\vb{v}}{t} = \dv[2]{\vb{s}}{t}, \qquad
+\alpha = \dv{\omega}{t} = \dv[2]{\theta}{t}
+\]
+For circular motion:
+\[
+a_t = r\alpha, \quad a_c = \frac{v^2}{r} = r\omega^2, \quad
+\vb{a} = a_t \hat e_t + a_c \hat e_r
+\]
+
+\section{Dynamic Quantities}
+
+\subsection*{Force}
+Force is a vector quantity that causes acceleration of objects with mass. Forces can be contact forces (friction, normal forces) or field forces (gravity, electromagnetic). 
+
+SI unit: \si{N = kg.m.s^{-2}}.
+\[
+f = \mu N, \quad f \leq \mu_s N, \quad F_g = mg, \quad F_s = kx
+\]
+
+\subsection*{Mass}
+Mass is a scalar measure of an object's inertia—its resistance to acceleration when subjected to force. Mass remains constant regardless of location, unlike weight which varies with gravitational field strength.
+
+\subsection*{Moment of Inertia}
+Moment of inertia is the rotational analog of mass. It measures an object's resistance to angular acceleration about a specific axis. The distribution of mass relative to the rotation axis determines the moment of inertia value. Objects with mass concentrated far from the rotation axis have larger moments of inertia.
+
+\[
+I = \sum m r^2 \quad\text{or}\quad I = \int r^2 \, dm
+\]
+\begin{itemize}
+\item Solid cylinder: $I = \tfrac12 mR^2$
+\item Hollow cylinder: $I = \tfrac12 m(R_1^2+R_2^2)$
+\item Solid sphere: $I = \tfrac25 mR^2$
+\end{itemize}
+
+\subsection*{Torque}
+Torque is the rotational analog of force. It causes angular acceleration of objects with rotational inertia. Torque depends on both the applied force magnitude and the perpendicular distance from the rotation axis to the force application point (moment arm).
+
+\[
+\vb{\tau} = \vb{r} \times \vb{F}, \quad \tau = rF \sin\phi, \quad
+\tau = I\alpha
+\]
+
+\section{Energy Concepts}
+
+\subsection*{Work}
+Work represents energy transfer that occurs when a force acts through a displacement. Work is done only when the force component is parallel to the displacement direction. In rotational systems, work is done when torque acts through an angular displacement.
+
+\[
+W = \int \vb{F} \cdot d\vb{s}, \quad W = Fs\cos\phi, \quad W = \int \tau\, d\theta
+\]
+
+\subsection*{Kinetic and Potential Energy}
+Kinetic energy is the energy of motion—both translational and rotational motion contribute to total kinetic energy. Potential energy is stored energy due to position in a force field (gravitational) or due to deformation (elastic springs). Energy can be converted between these forms but total energy is conserved in isolated systems.
+
+\[
+KE_t = \tfrac12 m v^2, \quad KE_r = \tfrac12 I \omega^2, \quad
+PE_g = mgh, \quad PE_s = \tfrac12 kx^2
+\]
+
+\subsection*{Work--Energy Theorem}
+The work-energy theorem provides a powerful analysis tool by relating the net work done on an object to its change in kinetic energy. 
+
+\begin{eqbox}
+\[
+W_{\text{net}} = \Delta KE = KE_2 - KE_1
+\]
+\end{eqbox}
+
+\subsection*{Power}
+Power measures the rate of energy transfer or work done. In mechanical systems, power equals force times velocity for linear motion, or torque times angular velocity for rotational motion. 
+
+\[
+P = \dv{W}{dt}, \quad P = \vb{F} \cdot \vb{v}, \quad
+P = \tau \omega
+\]
+
+
+
+\section{Mathematical Foundations: Calculus and Physical Meaning}
+
+Calculus provides the mathematical tools to describe how quantities change and accumulate over time.
+
+\subsection*{Differentiation: Measuring Rates of Change}
+Differentiation measures how quickly one quantity changes with respect to another. The derivative $\dv{f}{x}$ represents the instantaneous rate of change of function $f$ with respect to variable $x$.
+
+\textbf{Mathematical Definition:}
+\[
+\dv{f}{x} = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+\]
+
+\textbf{Physical Interpretation:} In motion analysis, differentiation reveals:
+\begin{itemize}
+\item \textbf{Velocity} = rate of change of position: $v = \dv{s}{t}$
+\item \textbf{Acceleration} = rate of change of velocity: $a = \dv{v}{t}$
+\item \textbf{Power} = rate of change of energy: $P = \dv{E}{t}$
+\end{itemize}
+
+Higher-order derivatives provide deeper insights:
+\[
+\text{Position} \xrightarrow{\text{differentiate}} \text{Velocity} \xrightarrow{\text{differentiate}} \text{Acceleration} \xrightarrow{\text{differentiate}} \text{Jerk}
+\]
+
+\subsection*{Integration: Measuring Accumulation}
+Integration measures the accumulation of quantities over an interval. The integral $\int f(x) \, dx$ represents the area under the curve $f(x)$ or the total accumulation of $f$ with respect to $x$.
+
+\textbf{Mathematical Definition:}
+\[
+\int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i) \Delta x
+\]
+
+\textbf{Physical Interpretation:} In motion analysis, integration reveals:
+\begin{itemize}
+\item \textbf{Displacement} = accumulated velocity over time: $s = \int v \, dt$
+\item \textbf{Velocity} = accumulated acceleration over time: $v = \int a \, dt$
+\item \textbf{Work} = accumulated force over distance: $W = \int F \, ds$
+\item \textbf{Energy} = accumulated power over time: $E = \int P \, dt$
+\end{itemize}
+
+\textbf{The Fundamental Connection:} Integration and differentiation are inverse operations:
+\[
+\text{Acceleration} \xrightarrow{\text{integrate}} \text{Velocity} \xrightarrow{\text{integrate}} \text{Position}
+\]
+
+\subsection*{A small summary of calculus connections of physical quantites}
+
+The kinematic quantities are mathematically related through calculus operations. Differentiation gives the rate of change (velocity from position, acceleration from velocity), while integration reconstructs motion from known rates of change.
+
+\[
+v = \dv{s}{t}, \quad a = \dv{v}{t}, \quad \omega = \dv{\theta}{t}, \quad \alpha = \dv{\omega}{t}
+\]
+\[
+v(t) = v_0 + \int_0^t a \,dt, \quad
+s(t) = s_0 + \int_0^t v \,dt
+\]
+Constant $a$:
+\[
+v=v_0+at, \quad s=s_0+v_0 t+\tfrac12 at^2, \quad v^2=v_0^2+2a(s-s_0)
+\]
+
+%\section{Applications to Drivetrains}
+%
+%\begin{clarifybox}
+%\textbf{Why These Matters for Drivetrains:}
+%\begin{itemize}
+%\item Motor torque curves show how torque varies with speed—differentiation helps find maximum power points
+%\item Integrating acceleration profiles determines total displacement during startup sequences  
+%\item Power consumption over driving cycles requires integrating instantaneous power
+%\item Reflected inertia calculations use the chain rule of differentiation through gear ratios
+%\end{itemize}
+%\end{clarifybox}
+%
+%\subsection*{Power Transmission}
+%Power transmission is the fundamental purpose of drivetrains. The relationship $P = \tau\omega$ governs all power transmission analysis. In ideal systems, power input equals power output, but torque and speed can be traded off through gear ratios.
+%
+%\[
+%P = \tau\omega, \quad P_1 = P_2, \quad \tau_1\omega_1=\tau_2\omega_2
+%\]
+%
+%\begin{clarifybox}
+%Gear ratio $n=\omega_{\text{input}}/\omega_{\text{output}}=r_{\text{output}}/r_{\text{input}}$:
+%The speed ratio equals the inverse radius ratio because the linear velocity at gear tooth contact points must be equal: $v = r_1\omega_1 = r_2\omega_2$, which gives $\omega_1/\omega_2 = r_2/r_1$.
+%\end{clarifybox}
+%
+%\[
+%\tau_{\text{output}}=n\tau_{\text{input}}, \quad \omega_{\text{output}}=\omega_{\text{input}}/n
+%\]
+%
+%\subsection*{Reflected Inertia}
+%When analyzing multi-stage drivetrain systems, all inertias must be referenced to a common shaft (typically the motor shaft). This "reflection" process accounts for gear ratio effects on rotational inertia.
+%
+%\begin{clarifybox}
+%For a load inertia $I_{\text{load}}$ connected through a gear ratio $n$ (motor speed / load speed):
+%\end{clarifybox}
+%
+%\[
+%I_{\text{reflected}}= I_{\text{load}} \left(\frac{\omega_{\text{load}}}{\omega_{\text{motor}}}\right)^2 = \frac{I_{\text{load}}}{n^2}
+%\]
+%
+%\subsection*{Dynamics of Rotation}
+%The equation of motion for rotating drivetrain systems applies Newton's second law in rotational form. The sum of applied torques minus load torques equals the product of total system inertia and angular acceleration.
+%
+%\[
+%\sum I\alpha = \sum \tau_{\text{applied}} - \sum \tau_{\text{load}}
+%\]
+%
+%\subsection*{Efficiency}
+%Real drivetrain systems have losses due to friction, windage, and other factors. Efficiency quantifies these losses and must be considered in power calculations and thermal analysis.
+%
+%\[
+%P_{\text{out}}=\eta P_{\text{in}}, \quad P_{\text{loss}}=(1-\eta)P_{\text{in}}
+%\]
+%
+%\section{Summary}
+%\begin{itemize}[leftmargin=*]
+%\item Newton's laws link force and motion—providing fundamental relationships for dynamic analysis.
+%\item Kinematics describe motion via differentiation—connecting position, velocity, and acceleration.
+%\item Dynamics involve force, torque, and inertia—determining system response to inputs.
+%\item Energy/Work/Power concepts unify analysis—providing powerful alternative solution methods.
+%\item Calculus provides motion solutions—enabling prediction of system behavior over time.
+%\item In drivetrains: $P=\tau\omega$ governs power transmission, reflected inertia enables system analysis, and efficiency accounts for real-world losses.
+%\end{itemize}
+%
+%\begin{tipbox}
+%For teaching: add free-body diagrams, torque-arm sketches, and velocity triangles. Use worked examples with cars, gears, and flywheels. Emphasize the physical meaning behind each equation rather than just mathematical manipulation.
+%\end{tipbox}
+
+\end{document}
