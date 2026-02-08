@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <defs>
+    <style>
+      .text-main { font-family: 'Arial', sans-serif; font-weight: 700; font-size: 56px; fill: #1a1a1a; }
+      .text-sub { font-family: 'Arial', sans-serif; font-weight: 300; font-size: 20px; fill: #4a4a4a; letter-spacing: 3px; }
+    </style>
+    
+    <!-- Unified gradient for all network elements -->
+    <linearGradient id="networkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5a5a5a;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Lighter grey for noisy data points -->
+    <linearGradient id="lightGrey" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8a8a8a;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#aaaaaa;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fully connected network - connections stop at circle boundaries (r=12) -->
+  <g>
+    <!-- Left to top-right connection -->
+    <line x1="60.73" y1="84.64" x2="89.27" y2="70.36" stroke="#535353" stroke-width="2"/>
+    
+    <!-- Left to bottom-right connection -->
+    <line x1="60.73" y1="95.36" x2="89.27" y2="109.64" stroke="#535353" stroke-width="2"/>
+    
+    <!-- Top-right to bottom-right connection (vertical) -->
+    <line x1="100" y1="77" x2="100" y2="102" stroke="#535353" stroke-width="2"/>
+  </g>
+  
+  <!-- Node 1: Electrical Engineering (AC sine wave) -->
+  <g transform="translate(50, 90)">
+    <!-- Circle background with white fill -->
+    <circle cx="0" cy="0" r="12" fill="white" stroke="url(#networkGradient)" stroke-width="1.5"/>
+    
+    <!-- AC sine wave symbol -->
+    <path d="M -8,0 Q -6,-6 -4,0 T 0,0 T 4,0 Q 6,6 8,0" 
+          fill="none" stroke="url(#networkGradient)" stroke-width="1.8"/>
+  </g>
+  
+  <!-- Node 2: Data Prediction (Noisy data points + Linear regression) -->
+  <g transform="translate(100, 65)">
+    <!-- Circle background with white fill -->
+    <circle cx="0" cy="0" r="12" fill="white" stroke="url(#networkGradient)" stroke-width="1.5"/>
+    
+    <!-- Noisy data points (lighter grey, more separated) -->
+    <circle cx="-5" cy="6.5" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="-8" cy="6" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="-5" cy="1.5" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="-1.5" cy="2" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="1" cy="-6" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="8" cy="-2" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="5.5" cy="-3" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="7" cy="-6" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="-7" cy="6" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="-5" cy="4" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="-3" cy="1" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="-1" cy="8" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="1" cy="-1" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="3" cy="-2" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="5" cy="-4" r="0.75" fill="url(#lightGrey)"/>
+    <circle cx="7" cy="-6" r="0.75" fill="url(#lightGrey)"/>
+    <!-- Linear regression line -->
+    <line x1="-9" y1="5.5" x2="9.5" y2="-5.5" stroke="url(#networkGradient)" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Node 3: AI/Neural Network (Interconnected layers) -->
+  <g transform="translate(100, 115)">
+    <!-- Circle background with white fill -->
+    <circle cx="0" cy="0" r="12" fill="white" stroke="url(#networkGradient)" stroke-width="1.5"/>
+    
+    <!-- Simplified neural network representation -->
+    <!-- Input layer -->
+    <circle cx="-6" cy="-3" r="1.5" fill="url(#networkGradient)"/>
+    <circle cx="-6" cy="3" r="1.5" fill="url(#networkGradient)"/>
+    <!-- Hidden layer -->
+    <circle cx="0" cy="-4" r="1.5" fill="url(#networkGradient)"/>
+    <circle cx="0" cy="0" r="1.5" fill="url(#networkGradient)"/>
+    <circle cx="0" cy="4" r="1.5" fill="url(#networkGradient)"/>
+    <!-- Output layer -->
+    <circle cx="6" cy="0" r="1.5" fill="url(#networkGradient)"/>
+    <!-- Connections - fully connected between layers -->
+    <!-- Input to hidden layer connections -->
+    <line x1="-6" y1="-3" x2="0" y2="-4" stroke="url(#networkGradient)" stroke-width="0.7" opacity="0.5"/>
+    <line x1="-6" y1="-3" x2="0" y2="0" stroke="url(#networkGradient)" stroke-width="0.7" opacity="0.5"/>
+    <line x1="-6" y1="-3" x2="0" y2="4" stroke="url(#networkGradient)" stroke-width="0.7" opacity="0.5"/>
+    <line x1="-6" y1="3" x2="0" y2="-4" stroke="url(#networkGradient)" stroke-width="0.7" opacity="0.5"/>
+    <line x1="-6" y1="3" x2="0" y2="0" stroke="url(#networkGradient)" stroke-width="0.7" opacity="0.5"/>
+    <line x1="-6" y1="3" x2="0" y2="4" stroke="url(#networkGradient)" stroke-width="0.7" opacity="0.5"/>
+    <!-- Hidden to output layer connections -->
+    <line x1="0" y1="-4" x2="6" y2="0" stroke="url(#networkGradient)" stroke-width="0.7" opacity="0.5"/>
+    <line x1="0" y1="0" x2="6" y2="0" stroke="url(#networkGradient)" stroke-width="0.7" opacity="0.5"/>
+    <line x1="0" y1="4" x2="6" y2="0" stroke="url(#networkGradient)" stroke-width="0.7" opacity="0.5"/>
+  </g>
+  
+  <!-- Typography -->
+  <text x="140" y="105" class="text-main">YHS</text>
+  <text x="140" y="135" class="text-sub">ENGINEERING CONSULTING</text>
+</svg>
