@@ -1,0 +1,125 @@
+/* Hanshu Yu — personal site
+   Shared stylesheet. Lightweight, single file, no build step.
+   Keeps the signature yellow + Gill Sans look, sets long-form text
+   on a calm cream "sheet" for comfortable reading. */
+
+:root {
+  --yellow: rgb(233, 218, 82);   /* signature page colour */
+  --sheet:  #faefbe;             /* soft yellow-tinted reading surface */
+  --ink:    #424242;             /* medium-dark grey */
+  --muted:  #6a6444;             /* bylines, dates, captions */
+  --rule:   #d8c95a;             /* hairlines / borders */
+  --link:   #6b5b00;             /* links, derived from the yellow */
+}
+
+html {
+  background-color: var(--yellow);
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1.65;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* The reading column: cream paper floating on the yellow desk. */
+.sheet {
+  max-width: 46rem;            /* ~735px → comfortable line length */
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
+  background: var(--sheet);
+  border-radius: 5px;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  font-weight: 600;
+}
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.45em; margin-top: 1.8rem; }
+h3 { font-size: 1.2em; }
+
+/* Links */
+a { color: var(--link); }
+a:hover { text-decoration: none; }
+
+/* Paragraphs read left-aligned by default. */
+p { margin: 0.9rem 0; }
+
+em { color: inherit; }
+
+/* Horizontal rules */
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 1.6rem 0;
+}
+
+blockquote {
+  margin: 1.6rem 0;
+  padding: 0.6rem 1.3rem;
+  border-left: 3px solid var(--rule);
+  font-style: italic;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Top-of-page navigation links on sub-pages. */
+.nav {
+  font-size: 0.9em;
+  margin-bottom: 1.6rem;
+}
+.nav a { margin-right: 1.2rem; }
+
+/* Centred elements where centring genuinely helps (titles, verse). */
+.center { text-align: center; }
+
+/* Verse / poetry: centred, tighter leading, preserved line breaks. */
+.verse {
+  text-align: center;
+  line-height: 1.5;
+}
+.verse p { margin: 0.2rem 0; }
+
+/* Download callout for the tool pages (replaces the dashed lines). */
+.download {
+  margin: 1.6rem 0;
+  padding: 1rem 1.3rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+}
+.download a { font-weight: 600; }
+
+/* ---- Essay typography (The Number in the Annex) ---- */
+.title  { text-align: center; margin-bottom: 0.2rem; }
+.byline { text-align: center; font-style: italic; color: var(--muted); margin-top: 0; }
+.rule   { margin-top: 1.2rem; }
+.q {
+  text-align: center;
+  font-size: 1.18em;
+  font-style: italic;
+}
+blockquote.honest { background: rgba(0, 0, 0, 0.04); }
+.endmark {
+  text-align: center;
+  font-size: 1.5em;
+  color: var(--muted);
+  margin: 2.2rem 0 0.5rem;
+}
+
+/* Small screens: trim the sheet padding so text isn't squeezed. */
+@media (max-width: 600px) {
+  body  { padding: 1rem 0.5rem; }
+  .sheet { padding: 1.6rem 1.3rem; }
+  body  { font-size: 19px; }
+}
