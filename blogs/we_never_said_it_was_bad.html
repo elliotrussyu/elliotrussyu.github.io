@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>We Never Said It Was Bad — Hanshu Yu</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Scoped additions for this essay's two devices, in the house palette.
+       Everything else inherits from style.css. */
+
+    /* The alibi: a disclaimer read back into evidence. Set apart from the
+       prose, slightly cooler, so the reader hears it as a quotation. */
+    .alibi {
+      margin: 1.6rem 0;
+      padding: 0.9rem 1.3rem;
+      background: rgba(0, 0, 0, 0.04);
+      border-left: 3px solid var(--rule);
+    }
+    .alibi .tag {
+      display: block;
+      font-size: 0.72em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .alibi p { margin: 0; font-style: italic; }
+
+    /* The marginal verdict: the one-line ruling pulled out of the argument.
+       A bordered card rather than a left-rule, so it reads as a stamp. */
+    .verdict {
+      margin: 2rem 0;
+      padding: 1.1rem 1.3rem;
+      border: 1px solid var(--rule);
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.025);
+    }
+    .verdict .tag {
+      display: block;
+      font-size: 0.72em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .verdict p { margin: 0; }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <nav class="nav">
+      <a href="../index.html">Front Page</a>
+      <a href="blogs.html">Blogs</a>
+    </nav>
+
+    <header>
+      <h1 class="title">We Never Said It Was Bad</h1>
+      <p class="byline">Hanshu Yu</p>
+      <hr class="rule">
+    </header>
+
+    <article>
+      <p>Every method has assumptions it states and assumptions it lives by. The stated ones go in the methods section, where reviewers can see them. The lived ones go unspoken, because to write them down would be to expose them to the question they cannot survive: <em>why should we believe that?</em> Algorithmic fairness, as it is practised, runs on two such assumptions. The first is technical, and people will concede it the moment you press. The second is moral, and they will deny it to your face — which is exactly how you know it is the one doing the work.</p>
+
+      <h2>The first assumption: that the units hold still</h2>
+
+      <p>Start with the part that is merely false, rather than the part that is evasive. Fairness audits borrow their grammar from statistics. They speak of rates, of disparities, of significance; they compare a quantity measured on one group with the same quantity measured on another and ask whether the gap is larger than chance would produce. This is the grammar of the hypothesis test, and it carries presuppositions the way a loan carries interest.</p>
+
+      <p>Chief among them is independence. The classical machinery — the things we reach for when we want to say a difference is <em>real</em> — assumes that the units of observation do not influence one another, that each is in some sense a fresh draw. It is the assumption that lets us treat a sample as informative about a population rather than about itself. And it is, for human beings, simply not true. People are not independent draws. They are embedded in one another: they share neighbourhoods, schools, workplaces, lineages, exposures. The outcome we observe for one is conditioned on the outcomes of those around them. The friend recommends the job; the cousin co-signs the loan; the school cohort moves together into the same handful of futures. Whatever else a population of people is, it is not a bag of marbles.</p>
+
+      <p>This is not an exotic complaint. Anyone who has worked with social data knows it, and there is an entire apparatus — clustered standard errors, multilevel models, network-aware estimators — built precisely to cope with it. The point is not that the problem is unknown. The point is that the fairness audit, when it issues its verdict, quietly helps itself to the convenient version anyway, because the inconvenient version makes the verdict harder to state and far harder to defend. Dependence does not merely widen the error bars. It corrodes the meaning of the quantity being measured. A disparity computed as though individuals were independent is answering a question — <em>what would we expect if these people had nothing to do with each other?</em> — that no one actually wants the answer to, because the premise is a fiction.</p>
+
+      <p>There is a second independence smuggled in alongside the first, and it is worse, because no amount of statistical sophistication repairs it. The audit treats the <em>label</em> — Black, white, Asian, man, woman — as something that stands apart from the outcome it is used to evaluate, a clean axis along which to slice the data. But the label and the outcome are not independent of each other in any deep sense. They were produced by the same history. The category was, in many cases, <em>built around</em> the very distributions we now measure it against; it acquired its social meaning through processes that also shaped who gets the job, the loan, the diagnosis. To hold the label fixed and ask whether the outcome differs across it is to treat as an independent variable something that is entangled, at the root, with the dependent one. The audit imagines it is measuring whether a process treats pre-existing groups differently. Often it is measuring the shadow of the process that made the groups in the first place.</p>
+
+      <p>I want to be precise here, because this is the kind of claim that invites a precise rebuttal. I am not saying disparities are illusions, or that measurement is impossible, or that because the units are entangled we may say nothing at all. I am saying that the number which comes out the far end of a fairness audit is doing much less than its grammar implies. It looks like a finding. It has the syntax of a finding — a magnitude, a comparison, a threshold. But a finding earns its authority from the conditions under which it was produced, and these conditions are not met. The number is conditional all the way down, and the conditions are buried.</p>
+
+      <h2>The second assumption: that a difference is a wrong</h2>
+
+      <p>So much for the assumption people will grant you. Here is the one they will not.</p>
+
+      <p>Suppose, for the sake of argument, that the measurement problem were solved — that we had a number we could trust, a disparity that survived every correction, a gap that was unambiguously real. We are now in possession of a fact: this group receives this outcome at this rate, and that group at that rate, and the rates differ. What follows? On its own: nothing. A difference is a difference. To get from <em>the rates differ</em> to <em>something is wrong</em> requires a further premise, and that premise is not statistical. It is moral. It says: this particular difference, among the infinite differences the world contains, is one that ought not to exist.</p>
+
+      <p>The field knows this. It is too sophisticated not to know it. And so it performs a careful manoeuvre. It does not <em>argue</em> for the moral premise — to argue for it would be to expose it to disagreement, to the awkward observation that not every disparity is an injustice, that some differences are benign and some are even desirable, that the burden of showing a particular gap is wrongful is a real burden that someone ought to discharge. Instead, the field <em>builds the premise into the vocabulary</em> and then disclaims having done so. It names the disparity “bias”. It names the gap “unfairness”. It ships a tool that is “bias-aware”, an algorithm that is “fairness-enhancing”. Every one of these words is a moral judgment wearing the coat of a technical term. To call a difference “bias” is already to have decided it is a defect; the word does the condemning so the author does not have to.</p>
+
+      <p>And when you press — when you ask, plainly, <em>are you claiming this disparity is unjust?</em> — the manoeuvre completes itself. The author retreats into the methods section and produces the alibi:</p>
+
+      <div class="alibi">
+        <span class="tag">The alibi</span>
+        <p>“We do not claim that any particular disparity is normatively undesirable. We merely provide a measure of bias and a method for its mitigation, should the practitioner deem mitigation appropriate. The normative question is outside the scope of the present work.”</p>
+      </div>
+
+      <p>Read it twice. It is a masterpiece of having it both ways. The word “bias” did the moral work in the title, the abstract, the press release, the policy brief that cites the paper. But the moment the moral claim is challenged, it is disowned: <em>we only measured, we never judged.</em> The judgment was laundered through the vocabulary and then denied at the till. You are left arguing with a man who has handed you a loaded word and, when it goes off, insists he was only describing the weather.</p>
+
+      <p>This is not rigour. It is the <em>costume</em> of rigour. Genuine rigour would say: here is the disparity; here is my argument that this disparity is wrongful, resting on these premises about desert, or need, or the history that produced it; and here is what I therefore propose. That argument can be examined. It can be refused. It exposes its author to the possibility of being wrong about the thing that actually matters. The fairness literature, by and large, declines to make it. It prefers the disparity to arrive pre-condemned and the condemnation to be deniable.</p>
+
+      <div class="verdict">
+        <span class="tag">In the margin</span>
+        <p>The tell is the asymmetry. The word “bias” is asserted loudly, in the place where it persuades — the title, the framing, the claim to social relevance. The disclaimer is whispered, in the place where it protects — the limitations paragraph no policymaker reads. A claim made loudly and retracted quietly is not a claim withdrawn. It is a claim made under cover.</p>
+      </div>
+
+      <h2>The deepest assumption: that something must be wrong</h2>
+
+      <p>Go down one more level. Beneath the unargued premise that <em>this</em> difference is a wrong lies a stranger premise still, structural rather than propositional, visible only in the shape of the enterprise. It is the assumption that there <em>must</em> be a wrong — that the role of the analyst is to find the injustice latent in the data and the role of the method is to correct it. The possibility that a given allocation might be, on examination, acceptable — that the honest verdict might be <em>no intervention is warranted here</em> — is not a possibility the apparatus is built to return. The tool is a bias detector. Detectors detect. A bias detector that reported “no bias requiring correction” as its characteristic output would not be funded, would not be published, would not justify the standing of those who build it.</p>
+
+      <p>So the enterprise tilts, by construction, toward the discovery of wrongs and the prescription of corrections. And this tilt has a direction that is worth naming without euphemism. Every correction is a redistribution: it moves some good — a rank, a loan, an admission, a flag — from where the process put it to where the analyst thinks it ought to go. That is a consequential act. It has winners and losers. It is exactly the kind of act that, performed by a government, we would expect to be justified, debated, and owned. Performed by a method, under the banner of “fairness”, it arrives pre-justified by the very word that describes it, and its author has already filed the disclaimer that says he never made a normative claim at all.</p>
+
+      <p>I find I object less to the redistributions than to the manner of their arrival. When two interests genuinely conflict — when satisfying this group’s claim means denying that group’s — that is a hard problem, an old problem, the problem political philosophy has worked on for two and a half thousand years without solving. It deserves to be met as what it is: a conflict, to be adjudicated in the open, with the costs named and the reasoning exposed. What I cannot abide is the conflict being dressed as a measurement. The morality slogan deployed as though it ended the argument rather than started it. The high ground seized by whoever gets to the word “fairness” first, so that to question the correction is made to look like a defence of injustice, when it may be nothing more than a request that the moral claim be argued rather than assumed.</p>
+
+      <p>And there is a fact about who is making these decisions that I will not pretend not to have noticed. The analyst who decides which disparity is a wrong, which group is owed a correction, which redistribution is righteous — this analyst is, with remarkable consistency, not among those whose lives the decision rearranges. The good being redistributed is rarely <em>their</em> good. The cost of being wrong is rarely <em>their</em> cost. They decide who gets what, under a principle that keeps them fed, in a transaction from which they are themselves exempt. I do not say this to impugn anyone’s sincerity. I say it because a structure in which the deciders are reliably insulated from the consequences of their decisions is a structure we are right to distrust, whatever the decency of the individuals inside it. We have a long history of moral apparatus that served, first of all, the people who operated it.</p>
+
+      <hr>
+
+      <p>None of this is an argument against caring how goods are distributed. I want to be exact about that, because the lazy version of my complaint — <em>drop the morality, just optimise</em> — is self-refuting, and I will not make it. There is no value-free place to stand. To say “let us simply make people’s lives better” is already to have chosen a morality; it merely happens to be one I find more honest than most, because it declares itself. The objection I am making is not to moral commitment in fairness work. It is to <em>laundered</em> moral commitment: the verdict that travels under the passport of a measurement, the redistribution that arrives pre-absolved by its own name, the analyst who claims the authority of a scientist and the immunity of one who “never made a normative claim”.</p>
+
+      <p>What I am asking for is not less morality but less disguise. Say what you think is wrong, and why. Put the premise on the page, where it can be argued with — that this gap, unlike that one, is a wrong, and here is the account of desert or need or history that makes it so. Own the redistribution as a redistribution, with its winners and its losers and its costs, rather than smuggling it in as the neutral output of a neutral tool. And when the people who will bear the consequences are not in the room, notice their absence, and treat it as a reason for humility rather than a licence for confidence.</p>
+
+      <p>Do that, and we can disagree honestly — which is the most a contested question allows. Decline to do it, and the word “fairness” goes on functioning as it functions now: not as the name of a value we are arguing toward, but as the seal on a verdict we were never permitted to question. I would rather argue. The argument is the respect.</p>
+
+      <div class="endmark">◆</div>
+    </article>
+  </main>
+</body>
+</html>
