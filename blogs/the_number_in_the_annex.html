@@ -14,64 +14,61 @@
     </nav>
 
     <header>
-      <h1 class="title">The Number in the Annex</h1>
+      <h1 class="title">When Fairness Has No Score</h1>
       <p class="byline">Hanshu Yu</p>
+      <p class="byline"><em>(Jun. 8th, 2026)</em></p>
       <hr class="rule">
     </header>
 
     <article>
-      <p>Somewhere in the technical file of an artificial-intelligence system, a number is waiting. Perhaps it is 0.95. It appears in a table, beside a label such as “demographic parity” or “equalised odds”. An auditor has produced it, a conformity assessor may verify it, and on its strength a system may be declared acceptable for use.</p>
-
+      <p>Before an artificial intelligence system is allowed, or trusted, to help decide who gets a loan, a job, or parole, someone may be asked to show that it is “fair”. Often that proof is a single number. Somewhere in the system’s technical file, that number is waiting. Perhaps it is 0.95. It appears in a table, beside a label such as “demographic parity” or “equalised odds”. An auditor produced it, an assessor may verify it, and on its strength the system may be declared acceptable for use.</p>
+ 
       <p class="q">But what sort of thing is this number?</p>
-
-      <p>It presents itself as a "measurement of justice". That should already make us pause. To measure fairness, one must assume that fairness has already been defined, that the relevant truth about the world is available, and that the thing being assessed is stable enough to be measured. In many contemporary uses of AI, all three assumptions fail. And, unfortunately, we don't have an almighty oracle that knows absolutely everything.</p>
-
-      <p>The founding &amp; long-time popular example of algorithmic fairness is the COMPAS controversy. In 2016, ProPublica investigated a risk-scoring system used in American courts and concluded that it was biased against Black defendants. Among those who were not rearrested, Black defendants were more often wrongly labelled high-risk; among those who were rearrested, white defendants were more often wrongly labelled low-risk.</p>
-
-      <p>The vendor replied that the score was fair in a different sense: among defendants assigned the same risk score, rearrest rates were similar across racial groups. ProPublica was looking at error rates. The vendor was looking at calibration. Both sides were reading the same table. Both could be mathematically right. But they were using different definitions of fairness.</p>
-
-      <p>Soon after, researchers proved that, when groups have different base rates, one generally cannot satisfy all these fairness criteria at once. Calibration and equal error rates are not merely difficult to reconcile; except under special conditions, they are mathematically incompatible.</p>
-
-      <p>This should have forced a political question into the open: which definition of fairness should govern, and why? Instead, much of the field treated the incompatibility as a menu. Fairness became a set of metrics, each implemented in toolkits, selectable like a configuration option. The political act did not disappear. It was hidden inside the choice of metric.</p>
-
-      <p>A second problem concerns the thing against which the system is judged: the so-called “ground truth”. In the COMPAS case, the outcome was not actual reoffending. It was rearrest. But rearrest is not simply behaviour recorded by neutral institutions. It is shaped by policing patterns, surveillance, discretion and social structure. The system is then audited against a “truth” partly produced by the very institutions whose decisions are at stake.</p>
-
-      <p>The problem becomes even clearer in online platforms. A link-prediction system recommends “people you may know”. How is it tested? Often by hiding some existing links and asking whether the system can recover them. But on a mature platform, many existing links are themselves the result of earlier recommendations. Yesterday’s recommendation becomes today’s ground truth. The system is examined against its own handwriting.</p>
-
-      <p>The problem deepens further in community detection, where algorithms divide a social graph into groups. What is the ground truth of a community? A workplace may contain departments, project teams, friendship circles and informal hierarchies. Different groupings may all be real for different purposes. An algorithm that discovers project teams may look wrong when scored against the organisation chart and perfect when scored against collaboration patterns. One output, two possible certificates, opposite verdicts.</p>
-
+ 
+      <p>It presents itself as a “measurement of justice”. That should already make us pause. To measure fairness, one must assume that fairness has already been defined, that the relevant truth about the world is available, and that the thing being assessed is stable enough to be measured. In many contemporary uses of AI, all three assumptions fail. And, unfortunately, there is no oracle that knows the whole social truth.</p>
+ 
+      <p>The canonical example of algorithmic fairness is the COMPAS controversy. In 2016, ProPublica investigated a risk-scoring system used in American courts and concluded that it was biased against Black defendants. Among those who were not rearrested, Black defendants were more often wrongly labelled high-risk; among those who were rearrested, white defendants were more often wrongly labelled low-risk.</p>
+ 
+      <p>The vendor replied that the score was fair in a different sense: among defendants assigned the same risk score, rearrest rates were similar across racial groups. ProPublica was looking at error rates. The vendor was looking at calibration. Both sides were reading the same table. Both could be mathematically right. But they were using different definitions of fairness. Soon after, researchers showed that, when two groups have different base rates (the underlying event is simply more common in one than the other) and prediction is imperfect, calibration and equal error rates generally cannot both be satisfied. The issue was not that one side had made a simple mathematical mistake. The deeper problem was that different fairness ideals can point in different directions.</p>
+ 
+      <p>This should have forced a political question into the open: which definition of fairness should govern, and why? Instead, the incompatibility was too often treated as a menu. Fairness became a set of metrics, each implemented in toolkits, selectable like a configuration option. The political act did not disappear. It was hidden inside the choice of metric. A second problem concerns the thing against which the system is judged: the so-called “ground truth”. In the COMPAS case, the outcome was not actual reoffending. It was rearrest. But rearrest is not simply behaviour recorded by neutral institutions. It is shaped by policing patterns, surveillance, discretion and social structure. The system is then audited against a “truth” partly produced by the very institutions whose decisions are at stake.</p>
+ 
+      <p>The lesson is not that fairness metrics are useless. It is that a fairness score is never just a number. It carries hidden choices about what fairness means, what counts as truth, and which social categories are treated as real.</p>
+ 
+      <p>None of this is confined to the courtroom. The same illusion of mathematical fairness reaches from high-stakes legal systems into our daily social lives, and there it becomes even clearer. A link-prediction system recommends “people you may know”. How is it tested? Often by hiding some existing links and asking whether the system can recover them. But on a mature platform, many existing links are themselves the result of earlier recommendations. Yesterday’s recommendation becomes today’s ground truth. The system is examined against its own handwriting.</p>
+ 
+      <p>The problem deepens further in labelling people on social platforms, where algorithms divide a social graph into groups and assign invisible tags. The technical name for this is <em>community detection</em>, and the name itself is worth pausing on. The algorithm looks at the graph of who connects to whom and draws boundaries around its dense clusters: broadly, sets of people more connected to one another than to everyone else. Each such cluster is called a “community”, and its members are then treated as similar to one another, the raw material of profiling and targeting. But this is not community in the ordinary sense. No one joined it, declared it, or need even recognise it; it is simply a patch of the network where the links happen to be dense. The name promises belonging; the procedure returns a statistical partition. And a different but equally reasonable method would carve the same graph into different “communities”. So what is the ground truth of a “community”? A workplace may contain departments, project teams, friendship circles and informal hierarchies. Different groupings may all be real for different purposes. An algorithm that discovers project teams may look wrong when scored against the organisation chart and perfect when scored against collaboration patterns. One output, two possible certificates, opposite verdicts.</p>
+ 
       <p>In such cases, a fairness score does not simply measure the world. It helps decide which version of the world counts.</p>
-
+ 
       <p>This is why fairness auditing can become an absolution machine. A certificate saying “the algorithm is fair” sounds like a statement about society, but it is usually only a statement about a system under a chosen metric, against a chosen referent, in a chosen frame. The distance between those two statements is where the politics lives.</p>
-
+ 
       <p>Sometimes the audit may detect a real machine defect: a model treats similarly situated people differently. That matters. But often the system is doing something else. It may be faithfully reproducing an unequal social structure. Or it may be failing to correct that structure. Whether correction is required is not a technical question. It is a political and moral one. A metric cannot settle it.</p>
-
-      <p>There is also a stranger frontier. Some AI systems do not merely allocate goods or rank applicants. They classify people into groups: audiences, communities, risk clusters, “lookalikes”. Here the system is not only distributing treatment among groups; it is helping manufacture the groups themselves.</p>
-
-      <p>This matters because group assignment is not innocent. To place someone into a detected community is to say, often without their knowledge, “you belong here”. That label may affect what they see, what they are offered, whom they are recommended, how they are policed, and how they are understood by other systems. The classification can loop back into life. A person is sorted into a cluster, shown the cluster’s content, recommended the cluster’s members, and gradually made to resemble the category assigned to them.</p>
-
-      <p>At this frontier, the audit usually asks a narrow question: were the boxes filled evenly? It rarely asks whether the boxes should exist at all.</p>
-
-      <p>This is where the “fairness industry” enters. Over the last decade, fairness has become a sector: consultants, auditors, toolkits, assurance practices, conformity assessments, compliance files. Regulation supplies demand. Companies need certificates. Auditors sell comfort. The result is a market for documented legitimacy.</p>
-
+ 
+      <p>And the system, as we have seen, is not only distributing treatment among groups; it is helping to manufacture the groups themselves. Group assignment is not innocent. To place someone into a detected community is to say, often without their knowledge, “you belong here”. That label may affect what they see, what they are offered, whom they are recommended, how they are policed, and how they are understood by other systems. The classification can loop back into life. A person is sorted into a cluster, shown the cluster’s content, recommended the cluster’s members, and gradually made to resemble the category assigned to them.</p>
+ 
+      <p>Here the audit usually asks a narrow question: were the boxes filled evenly? It rarely asks whether the boxes should exist at all.</p>
+ 
+      <p>This is where the “fairness industry” enters. Over the last decade, fairness has become a sector: consultants, auditors, toolkits, assurance practices, conformity assessments, compliance files. Regulation supplies demand. Companies need certificates. Auditors are often asked, implicitly or explicitly, to turn uncertainty into comfort. The result is a market for documented legitimacy.</p>
+ 
       <p>That does not mean all fairness auditing is meaningless. Some audits are meaningful. If a public-health campaign uses a network to spread information, the goal may be clear, the outcome observable, and the fairness question concrete. In such cases, measurement can help.</p>
-
+ 
       <p>The problem is that not all cases are like this. As we move from clear allocations to rankings, recommendations and algorithmic group-making, the conditions for meaningful measurement weaken. The honest response should weaken with them. Sometimes the right audit result is not a lower fairness score. It is no score.</p>
-
-      <p>This should be an accepted result: no determinate verdict available. The auditor should be able to say that the fairness of a system cannot responsibly be certified because the criterion is unargued, the referent is contested, the structure is undetectable, or the object itself is method-dependent.</p>
-
-      <p>That is not a failure of auditing. It is what a serious audit would look like.</p>
-
-      <p>Financial auditing already has a rough analogue: the qualified opinion or disclaimer of opinion. Sometimes the auditor says that no responsible opinion can be given. Algorithmic fairness needs the same form. A valid audit should declare its fairness criterion, justify its ground truth, record reasonable alternatives, test whether the relevant structure is detectable, and issue a no-verdict where these conditions fail.</p>
-
+ 
+      <p>This should be an accepted audit result: no determinate finding available. The auditor should be able to say that the fairness of a system cannot responsibly be certified because the criterion is unargued, the referent is contested, the structure is undetectable, or the object itself is method-dependent.</p>
+ 
+      <p>That is not a failure of auditing. It is what a serious audit would look like. But issuing no finding is not permission to deploy. It means the decision can no longer hide behind technical certification; it must be defended openly, as a political and institutional choice.</p>
+ 
+      <p>Financial auditing already has a rough analogue: the qualified opinion or disclaimer of opinion. Sometimes the auditor says that no responsible opinion can be given. Algorithmic fairness needs the same form. A valid audit should declare its fairness criterion, justify its ground truth, record reasonable alternatives, test whether the relevant structure is detectable, and issue no finding where these conditions fail.</p>
+ 
       <p>The most honest certificate may therefore say less and reveal more:</p>
-
+ 
       <blockquote class="honest">
-        <p>This system sorts people into groups. The groups depend on the method chosen. A different defensible method would produce different groups. For some people, no assignment can be made above chance. Against one referent the system scores highly; against another it scores poorly. No determinate verdict of fairness is available, and none is given.</p>
+        <p>This system sorts people into groups. The groups depend on the method chosen. A different defensible method would produce different groups. For some people, no assignment can be made above chance. Against one referent the system scores highly; against another it scores poorly. No determinate finding of fairness is available, and none is given.</p>
       </blockquote>
-
+ 
       <p>Such a document would be harder to sell than a number. But it would be more truthful.</p>
-
+ 
       <p>The question is not whether fairness can ever be measured. Sometimes it can. The question is whether we are willing to build institutions that can also say when it cannot. Until then, the number in the annex will continue to look like justice, while doing the quieter work of compliance.</p>
 
       <div class="endmark">◆</div>
